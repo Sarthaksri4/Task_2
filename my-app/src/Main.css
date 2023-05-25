@@ -1,0 +1,26 @@
+.screen{
+    display: flex;
+    height: 3500px;
+  }
+  .firsthalf{
+    position: fixed;
+    width: 40%;
+    height: 100vh;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+  }
+  .secondhalf{
+    position: fixed;
+    z-index: -1;
+    right: 0%;
+    width: 60%;
+    height: 100vh;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+  }
