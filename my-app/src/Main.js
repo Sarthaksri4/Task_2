@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+import './Main.css';
 import l1_fh_img from './images/l1_fh_img.png'
 import l1_sh_img1 from './images/l1_sh_img1.png'
 import l1_sh_img2 from './images/l1_sh_img2.png'
@@ -24,67 +26,67 @@ import l7shimg2 from './images/l7shimg2.png'
 import { useMediaQuery } from 'react-responsive'
 import ReactTextTransition from "react-text-transition";
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.min.css';
-import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 const App = () => {
-  const [first_half_layer, setFirst_half_layer] = useState('fhl1')
-  const [second_half_layer, setSecond_half_layer] = useState('shl1')
-  const [scrolling_up_or_down, setScrolling_up_or_down] = useState(0)
-  const [text_transition_direction, setText_transition_direction] = useState('up')
+  const [first_half, setfirst_half] = useState('fhl1')
+  const [second_half, setsecond_half] = useState('shl1')
+  const [scrollup_down, setscrollup_down] = useState(0)
+  const [text_transition_dir, settext_transition_dir] = useState('up')
   const [top_p_text, setTop_p_text] = useState(['', '25M+ Downloads', 'on appstore & playstore', 'ABC 456', 'We are the best web development', 'company in the word', '', 'view case study ➡', 1])
   const [initial, setInitial] = useState(true)
   useEffect (()=>{
       document.addEventListener("scroll", e => {
           let scrolled = window.scrollY;
-          if (scrolled < scrolling_up_or_down){
-            setText_transition_direction('down')
+          if (scrolled < scrollup_down){
+            settext_transition_dir('down')
           } else {
-            setText_transition_direction('up')
+            settext_transition_dir('up')
           }
-          setScrolling_up_or_down(scrolled)
+          setscrollup_down(scrolled)
           if (scrolled <= 362){
             setTop_p_text(['', '25M+ Downloads', 'on appstore & playstore', 'ABC 456', 'We are the best web development', 'company in the word', '', 'view case study ➡', 1])
-            setFirst_half_layer('fhl1')
-            setSecond_half_layer('shl1')
+            setfirst_half('fhl1')
+            setsecond_half('shl1')
           } else if (scrolled <= 724) {
             setTop_p_text(['The Next Big', 'Blockchain', 'Revolution', 'ABC 457', 'We are the best web development ', 'company in the word ', ' ', 'Coming Soon', 2])
-            setFirst_half_layer('fhl2')
-            setSecond_half_layer('shl2')
+            setfirst_half('fhl2')
+            setsecond_half('shl2')
           } else if (scrolled <= 1086) {
             setTop_p_text(['Powered by advance', 'NASA', 'algorithms', 'ABC 458', 'We are the best', 'web development company', 'in the world', 'Coming Soon ', 3])
-            setFirst_half_layer('fhl3')
-            setSecond_half_layer('shl3')
+            setfirst_half('fhl3')
+            setsecond_half('shl3')
           } else if (scrolled <= 1448) {
             setTop_p_text(['Redefining', 'UX Strategy', 'and UI design', 'ABC 459', 'We are the best ', 'web development company ', 'in the world ', 'view case study ➡', 4])
-            setFirst_half_layer('fhl4')
-            setSecond_half_layer('shl4')
+            setfirst_half('fhl4')
+            setsecond_half('shl4')
           } else if (scrolled <= 1810) {
             setTop_p_text(['Text Headline', 'Text Headline', 'Footer headline', 'ABC 4510', 'We are the best AR', 'development company', 'in the world', 'view case study ➡ ', 5])
-            setFirst_half_layer('fhl5')
-            setSecond_half_layer('shl5')
+            setfirst_half('fhl5')
+            setsecond_half('shl5')
           } else if (scrolled <= 2172) {
             setTop_p_text(['Developing ERP Solution for', 'Text Headline ', 'in furniture industry', 'ABC 4511', 'Best Since 2017', 'We offer wide range of', 'web development and app development.', 'view case study ➡', 6])
-            setFirst_half_layer('fhl6')
-            setSecond_half_layer('shl6')
+            setfirst_half('fhl6')
+            setsecond_half('shl6')
           } else {
             setTop_p_text(['Biggest Classifieds', 'East Asia', 'Countries', 'ABC 4512', 'We are the best', 'web development company', 'in the world', 'Coming Soon', 7])
-            setFirst_half_layer('fhl7')
-            setSecond_half_layer('shl7')
+            setfirst_half('fhl7')
+            setsecond_half('shl7')
           }
       })
-  }, [scrolling_up_or_down])
+  }, [scrollup_down])
   const breaking_point_desktop = useMediaQuery({query: '(min-width: 800px)'})
   if(initial){
       setTimeout(() => {
           setInitial(false)
       }, 1000)
   }
+  //<p style={{marginTop: '93vh', color: 'white', marginLeft: '80%'}}><strong>S K I P</strong></p>
+  //<p style={{marginTop: '93vh', color: 'white', marginLeft: '10%'}}>Coming Soon</p>
   return (<>
     {breaking_point_desktop ?
     <div className='screen'>
       {initial && <div style={{width: '100%', height: '100vh', backgroundColor: 'white', zIndex: '1'}}></div>}
-      <div id={first_half_layer} className='firsthalf'>
-          <div className='svgpos' id={first_half_layer} style={{position: 'absolute', width: '450px', height: '450px', borderRadius: '300px'}}>
+      <div id={first_half} className='firsthalf'>
+          <div className='svgpos' id={first_half} style={{position: 'absolute', width: '450px', height: '450px', borderRadius: '300px'}}>
           <svg version="1.1" id="transring" xmlns="http://www.w3.org/2000/svg" xlinkXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 414 414" style={{enableBackground:'new 0 0 414 414', width: '430px', height: '430px', marginLeft: '10px', marginTop: '10px'}} xmlSpace="preserve">
               <path id="Transparent_Ring" class="transrg" style={{opacity:'0.4',fill:'none',stroke:'#FFFFFF',strokeWidth:'2',strokeMiterlimit:'10',enableBackground:'new'}} d="M84.2,85c31.3-31.5,74.7-51,122.7-51c95.5,0,173,77.5,173,173s-77.5,173-173,173
                   c-47.8,0-91-19.4-122.3-50.7"></path>
@@ -152,21 +154,21 @@ const App = () => {
           <ReactTextTransition
               style={{fontWeight: '500', fontSize: '22px'}}
               text={top_p_text[0]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
           <ReactTextTransition
               style={{fontWeight: '1000', fontSize: '60px'}}
               text={top_p_text[1]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
           <ReactTextTransition
               style={{fontSize: '22px', fontWeight: '500', position: 'absolute', right: '0px'}}
               text={top_p_text[2]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
@@ -177,25 +179,25 @@ const App = () => {
           <ReactTextTransition
               style={{fontWeight: '1000', fontSize: '60px'}}
               text={top_p_text[3]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
           <ReactTextTransition
               text={top_p_text[4]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
           <ReactTextTransition
               text={top_p_text[5]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
           <ReactTextTransition
               text={top_p_text[6]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
@@ -204,15 +206,131 @@ const App = () => {
           <ReactTextTransition
               className='soon'
               text={top_p_text[7]}
-              direction={text_transition_direction}
+              direction={text_transition_dir}
               springConfig={{ stiffness: 50, damping: 20 }}
               noOverflow
           />
         </div>
         <p style={{marginLeft: '80%', marginTop: '-6vh', color: 'white'}}>S K I P</p>
       </div>
+      <div id={second_half} className='secondhalf'>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l1sheffectin' : 'l1sheffectout'} style={{marginLeft: '100px', position: 'absolute'}} alt='mobile img 1' src={l1_sh_img1}/>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l1sheffectin' : 'l1sheffectout'} style={{marginLeft: '500px', position: 'absolute'}} alt='mobile img 2' src={l1_sh_img2}/>
+          <img className={top_p_text[3] === 'ABC 457' ? 'l2shimg1effectin' : 'l2shimg1effectout'} style={{marginLeft: '200px', position: 'absolute'}} alt='mobile img 1' src={l2shimg1}/>
+          <img className={top_p_text[3] === 'ABC 457' ? 'l2shimg2effectin' : 'l2shimg2effectout'} style={{marginLeft: '700px', position: 'absolute'}} alt='mobile img 2' src={l2shimg2}/>
+          <img className={top_p_text[3] === 'ABC 458' ? 'l3shimg1effectin' : 'l3shimg1effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 1' src={l3shimg1}/>
+          <img className={top_p_text[3] === 'ABC 458' ? 'l3shimg2effectin' : 'l3shimg2effectout'} style={{marginLeft: '700px', position: 'absolute'}} alt='mobile img 2' src={l3shimg2}/>
+          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimg1effectin' : 'l4shimg1effectout'} style={{marginLeft: '100px', position: 'absolute'}} alt='mobile img 1' src={l4shimg1}/>
+          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimg2effectin' : 'l4shimg2effectout'} style={{marginLeft: '550px', position: 'absolute'}} alt='mobile img 2' src={l4shimg2}/>
+          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimgbuneffectin' : 'l4shimgbuneffectout'} style={{right: '80px', position: 'absolute', width: '250px', height: 'auto'}} alt='mobile img 3' src={l4shimgbun}/>
+          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimgrolleffectin' : 'l4shimgrolleffectout'} style={{bottom: '-125px', position: 'absolute', width: '500px', height: 'auto'}} alt='mobile img 4' src={l4shimgroll}/>
+          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimgpizzaeffectin' : 'l4shimgpizzaeffectout'} style={{position: 'absolute', width: '600px', marginTop: '-115px'}} alt='mobile img 5' src={l4shimgpizza}/>
+          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg1effectin' : 'l5shimg1effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 1' src={l5shimg1}/>
+          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg2effectin' : 'l5shimg2effectout'} style={{marginLeft: '485px', position: 'absolute'}} alt='mobile img 2' src={l5shimg2}/>
+          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg3effectin' : 'l5shimg3effectout'} style={{top: '22vh', position: 'absolute'}} alt='mobile img 3' src={l5shimg3}/>
+          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg4effectin' : 'l5shimg4effectout'} style={{marginLeft: '485px', position: 'absolute'}} alt='mobile img 4' src={l5shimg4}/>
+          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg5effectin' : 'l5shimg5effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 5' src={l5shimg5}/>  
+          <img className={top_p_text[3] === 'ABC 4511' ? 'l6shimgeffectin' : 'l6shimgeffectout'} style={{position: 'absolute', width: '100%'}} alt='mobile img 1' src={l6shimg}/>  
+          <img className={top_p_text[3] === 'ABC 4512' ? 'l7shimg2effectin' : 'l7shimg2effectout'} style={{marginLeft: '650px', position: 'absolute'}} alt='mobile img 1' src={l7shimg2}/>  
+          <img className={top_p_text[3] === 'ABC 4512' ? 'l7shimg1effectin' : 'l7shimg1effectout'} style={{marginLeft: '225px', position: 'absolute'}} alt='mobile img 2' src={l7shimg1}/>  
+      </div>
     </div> : <div style={{width: '100%', height: '100%'}}>
-
+        <OwlCarousel items={1} loop autoplay autoplayTimeout={3000} autoplaySpeed={1000} dots>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: '#c8c7cb', width: '100%', height: '50vh'}}>
+                <img style={{width: '225px', position:'absolute', left: '-10px', top: '7vh'}} alt='img 1' src={l1_sh_img1}/>
+                <img style={{width: '225px', position:'absolute', right: '-25px', top: '7vh'}} alt='img 2' src={l1_sh_img2}/>
+            </div>
+            <div style={{color: 'white', width: '100%', height: '50vh', backgroundColor: '#6343a2', position: 'absolute'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}><img style={{marginTop: '-15px', width: '70%', backgroundColor:'white', border: '3px solid #6343a2', borderRadius: '15px'}} alt='img 1' src={l1_fh_img}/>
+                <h1>ABC 123</h1>
+                <p>This is sample text for ABC 123. This is sample text for ABC 123.</p>
+                <br />
+                <p style={{fontWeight: '500'}}>view case study ➡</p></div>
+            </div>
+        </div>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: '#202462', width: '100%', height: '50vh'}}>
+                <img style={{width: '175px', position:'absolute', left: '10px', bottom: '50vh'}} alt='img 1' src={l2shimg1}/>
+                <img style={{width: '175px', position:'absolute', right: '10px', top: '0vh'}} alt='img 2' src={l2shimg2}/>
+            </div>
+            <div style={{color: 'white', width: '100%', height: '50vh', background: 'linear-gradient(141deg, rgba(201,74,141,1) 0%, rgba(201,74,141,1) 0%, rgba(80,59,146,1) 100%)'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}>
+                <h1>ABC 1</h1>
+                <p>This is sample text for ABC 123. This is sample text for ABC 123.</p>
+                <br />
+                <div style={{display: 'flex'}}><p style={{fontWeight: '500'}}>CASE STUDY - &nbsp;</p><p style={{width: '125px', height: '35px', textAlign: 'center', backgroundColor:'#c94a8d', borderRadius: '25px', paddingTop: '15px', fontWeight: '500', marginTop: '1px'}}>Coming Soon</p></div></div>
+            </div>
+        </div>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: '#15194a', width: '100%', height: '50vh'}}>
+                <img style={{width: '200px', position:'absolute', left: '5px', bottom: '-18vh'}} alt='img 1' src={l3shimg1}/>
+                <img style={{width: '165px', position:'absolute', right: '10px', top: '-10vh'}} alt='img 2' src={l3shimg2}/>
+            </div>
+            <div style={{position: 'absolute', color: 'white', width: '100%', height: '50vh', background: '#0e1138'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}>
+                <h1>ABC 2</h1>
+                <p>This is sample text for ABC 123. This is sample text for ABC 123.</p>
+                <br />
+                <div style={{display: 'flex'}}><p style={{fontWeight: '500'}}>CASE STUDY - &nbsp;</p><p style={{width: '125px', height: '35px', textAlign: 'center', backgroundColor:'lightgray', color: 'black', borderRadius: '25px', paddingTop: '15px', fontWeight: '500', marginTop: '1px'}}>Coming Soon</p></div></div>
+            </div>
+        </div>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: '#0d121b', width: '100%', height: '50vh'}}>
+                <img style={{width: '165px', position:'absolute', left: '30px', bottom: '-10vh'}} alt='img 1' src={l4shimg1}/>
+                <img style={{width: '165px', position:'absolute', right: '10px', top: '-7vh'}} alt='img 2' src={l4shimg2}/>
+                <img style={{width: '165px', position:'absolute', left: '0px', top: '-4vh'}} alt='img 3' src={l4shimgpizza}/>
+            </div>
+            <div style={{position: 'absolute', color: 'white', width: '100%', height: '50vh', background: '#152339'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}>
+                <h1>ABC 3</h1>
+                <p>This is sample text for ABC 123. This is sample text for ABC 123.</p>
+                <br />
+                <p style={{fontWeight: '500'}}>view case study ➡</p></div>
+            </div>
+        </div>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: '#32cfeb', width: '100%', height: '50vh'}}>
+                <img style={{width: '150px', position:'absolute', left: '5px', top: '-15vh'}} alt='img 1' src={l5shimg1}/>
+                <img style={{width: '150px', position:'absolute', left: '150px', top: '-2vh'}} alt='img 2' src={l5shimg2}/>
+                <img style={{width: '150px', position:'absolute', right: '-75px', bottom: '-7vh'}} alt='img 3' src={l5shimg3}/>
+                <img style={{width: '150px', position:'absolute', left: '150px', bottom: '-31vh'}} alt='img 4' src={l5shimg4}/>
+                <img style={{width: '150px', position:'absolute', left: '5px', bottom: '-18vh'}} alt='img 5' src={l5shimg5}/>
+            </div>
+            <div style={{position: 'absolute', color: 'white', width: '100%', height: '50vh', background: '#1563e8'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}>
+                <h1>ABC 4</h1>
+                <p>This is sample text for ABC 123. This is sample text for ABC 123.</p>
+                <br />
+                <p style={{fontWeight: '500'}}>view case study ➡</p></div>
+            </div>
+        </div>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: 'white', width: '100%', height: '50vh'}}>
+                <img style={{ position:'absolute', bottom: '0vh'}} alt='img 1' src={l6shimg}/>
+            </div>
+            <div style={{position: 'absolute', color: 'white', width: '100%', height: '50vh', background: '#0b368f'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}>
+                <h1>ABC 5</h1>
+                <p>This is sample text for ABC 123. This is sample text for ABC 123.</p>
+                <br />
+                <p style={{fontWeight: '500'}}>view case study ➡</p></div>
+            </div>
+        </div>
+        <div class='item' style={{width: '100%'}}>
+            <div style={{backgroundColor: '#4bb76a', width: '100%', height: '50vh'}}>
+                <img style={{width: '275px', zIndex:'1', position:'absolute', left: '0px', top: '6vh'}} alt='img 1' src={l7shimg1}/>
+                <img style={{width: '225px', position:'absolute', right: '0px', top: '10vh'}} alt='img 2' src={l7shimg2}/>
+            </div>
+            <div style={{zIndex: '2', color: 'white', width: '100%', height: '50vh', backgroundColor: '#33834d', position: 'absolute'}}>
+                <div style={{left: '5%', position: 'absolute', right: '5%'}}><img style={{marginTop: '-15px', width: '70%', backgroundColor:'white', border: '3px solid #33834d', borderRadius: '15px'}} alt='img 1' src={l7fhimg}/>
+                <h1>XYZ 123</h1>
+                <p>This is sample text for XYZ 123. This is sample text for ABC 123.</p>
+                <br />
+                <div style={{display: 'flex'}}><p style={{fontWeight: '500'}}>CASE STUDY - &nbsp;</p><p style={{width: '125px', height: '35px', textAlign: 'center', fontWeight: '500', backgroundColor:'lightgray', color: '#33834d', borderRadius: '25px', paddingTop: '15px', marginTop: '1px'}}>Coming Soon</p></div></div>
+            </div>
+        </div>
+        </OwlCarousel>
     </div>}
     </>
   );
