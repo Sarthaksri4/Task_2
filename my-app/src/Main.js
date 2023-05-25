@@ -31,7 +31,7 @@ const App = () => {
   const [second_half, setsecond_half] = useState('shl1')
   const [scrollup_down, setscrollup_down] = useState(0)
   const [text_transition_dir, settext_transition_dir] = useState('up')
-  const [top_p_text, setTop_p_text] = useState(['', '25M+ Downloads', 'on appstore & playstore', 'ABC 456', 'We are the best web development', 'company in the word', '', 'view case study ➡', 1])
+  const [top_p_text, setTop_p_text] = useState(['', '25M+ Downloads', 'on appstore & playstore', 'ABC 123', 'We are the best web development', 'company in the word', '', 'view case study ➡', 1])
   const [initial, setInitial] = useState(true)
   useEffect (()=>{
       document.addEventListener("scroll", e => {
@@ -43,31 +43,31 @@ const App = () => {
           }
           setscrollup_down(scrolled)
           if (scrolled <= 362){
-            setTop_p_text(['', '25M+ Downloads', 'on appstore & playstore', 'ABC 456', 'We are the best web development', 'company in the word', '', 'view case study ➡', 1])
+            setTop_p_text(['', '25M+ Downloads', 'on appstore & playstore', 'ABC 123', 'We are the best web development', 'company in the word', '', 'view case study ➡', 1])
             setfirst_half('fhl1')
             setsecond_half('shl1')
           } else if (scrolled <= 724) {
-            setTop_p_text(['The Next Big', 'Blockchain', 'Revolution', 'ABC 457', 'We are the best web development ', 'company in the word ', ' ', 'Coming Soon', 2])
+            setTop_p_text(['The Next Big', 'Blockchain', 'Revolution', 'ABC 234', 'We are the best web development ', 'company in the word ', ' ', 'Coming Soon', 2])
             setfirst_half('fhl2')
             setsecond_half('shl2')
           } else if (scrolled <= 1086) {
-            setTop_p_text(['Powered by advance', 'NASA', 'algorithms', 'ABC 458', 'We are the best', 'web development company', 'in the world', 'Coming Soon ', 3])
+            setTop_p_text(['Powered by advance', 'NASA', 'algorithms', 'ABC 345', 'We are the best', 'web development company', 'in the world', 'Coming Soon ', 3])
             setfirst_half('fhl3')
             setsecond_half('shl3')
           } else if (scrolled <= 1448) {
-            setTop_p_text(['Redefining', 'UX Strategy', 'and UI design', 'ABC 459', 'We are the best ', 'web development company ', 'in the world ', 'view case study ➡', 4])
+            setTop_p_text(['Redefining', 'UX Strategy', 'and UI design', 'ABC 456', 'We are the best ', 'web development company ', 'in the world ', 'view case study ➡', 4])
             setfirst_half('fhl4')
             setsecond_half('shl4')
           } else if (scrolled <= 1810) {
-            setTop_p_text(['Text Headline', 'Text Headline', 'Footer headline', 'ABC 4510', 'We are the best AR', 'development company', 'in the world', 'view case study ➡ ', 5])
+            setTop_p_text(['Text Headline', 'Text Headline', 'Footer headline', 'ABC 567', 'We are the best AR', 'development company', 'in the world', 'view case study ➡ ', 5])
             setfirst_half('fhl5')
             setsecond_half('shl5')
           } else if (scrolled <= 2172) {
-            setTop_p_text(['Developing ERP Solution for', 'Text Headline ', 'in furniture industry', 'ABC 4511', 'Best Since 2017', 'We offer wide range of', 'web development and app development.', 'view case study ➡', 6])
+            setTop_p_text(['Developing ERP Solution for', 'Text Headline ', 'in furniture industry', 'ABC 678', 'Best Since 2017', 'We offer wide range of', 'web development and app development.', 'view case study ➡', 6])
             setfirst_half('fhl6')
             setsecond_half('shl6')
           } else {
-            setTop_p_text(['Biggest Classifieds', 'East Asia', 'Countries', 'ABC 4512', 'We are the best', 'web development company', 'in the world', 'Coming Soon', 7])
+            setTop_p_text(['Biggest Classifieds', 'East Asia', 'Countries', 'ABC 23478', 'We are the best', 'web development company', 'in the world', 'Coming Soon', 7])
             setfirst_half('fhl7')
             setsecond_half('shl7')
           }
@@ -214,25 +214,25 @@ const App = () => {
         <p style={{marginLeft: '80%', marginTop: '-6vh', color: 'white'}}>S K I P</p>
       </div>
       <div id={second_half} className='secondhalf'>
-          <img className={top_p_text[3] === 'ABC 456' ? 'l1sheffectin' : 'l1sheffectout'} style={{marginLeft: '100px', position: 'absolute'}} alt='mobile img 1' src={l1_sh_img1}/>
-          <img className={top_p_text[3] === 'ABC 456' ? 'l1sheffectin' : 'l1sheffectout'} style={{marginLeft: '500px', position: 'absolute'}} alt='mobile img 2' src={l1_sh_img2}/>
-          <img className={top_p_text[3] === 'ABC 457' ? 'l2shimg1effectin' : 'l2shimg1effectout'} style={{marginLeft: '200px', position: 'absolute'}} alt='mobile img 1' src={l2shimg1}/>
-          <img className={top_p_text[3] === 'ABC 457' ? 'l2shimg2effectin' : 'l2shimg2effectout'} style={{marginLeft: '700px', position: 'absolute'}} alt='mobile img 2' src={l2shimg2}/>
-          <img className={top_p_text[3] === 'ABC 458' ? 'l3shimg1effectin' : 'l3shimg1effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 1' src={l3shimg1}/>
-          <img className={top_p_text[3] === 'ABC 458' ? 'l3shimg2effectin' : 'l3shimg2effectout'} style={{marginLeft: '700px', position: 'absolute'}} alt='mobile img 2' src={l3shimg2}/>
-          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimg1effectin' : 'l4shimg1effectout'} style={{marginLeft: '100px', position: 'absolute'}} alt='mobile img 1' src={l4shimg1}/>
-          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimg2effectin' : 'l4shimg2effectout'} style={{marginLeft: '550px', position: 'absolute'}} alt='mobile img 2' src={l4shimg2}/>
-          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimgbuneffectin' : 'l4shimgbuneffectout'} style={{right: '80px', position: 'absolute', width: '250px', height: 'auto'}} alt='mobile img 3' src={l4shimgbun}/>
-          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimgrolleffectin' : 'l4shimgrolleffectout'} style={{bottom: '-125px', position: 'absolute', width: '500px', height: 'auto'}} alt='mobile img 4' src={l4shimgroll}/>
-          <img className={top_p_text[3] === 'ABC 459' ? 'l4shimgpizzaeffectin' : 'l4shimgpizzaeffectout'} style={{position: 'absolute', width: '600px', marginTop: '-115px'}} alt='mobile img 5' src={l4shimgpizza}/>
-          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg1effectin' : 'l5shimg1effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 1' src={l5shimg1}/>
-          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg2effectin' : 'l5shimg2effectout'} style={{marginLeft: '485px', position: 'absolute'}} alt='mobile img 2' src={l5shimg2}/>
-          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg3effectin' : 'l5shimg3effectout'} style={{top: '22vh', position: 'absolute'}} alt='mobile img 3' src={l5shimg3}/>
-          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg4effectin' : 'l5shimg4effectout'} style={{marginLeft: '485px', position: 'absolute'}} alt='mobile img 4' src={l5shimg4}/>
-          <img className={top_p_text[3] === 'ABC 4510' ? 'l5shimg5effectin' : 'l5shimg5effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 5' src={l5shimg5}/>  
-          <img className={top_p_text[3] === 'ABC 4511' ? 'l6shimgeffectin' : 'l6shimgeffectout'} style={{position: 'absolute', width: '100%'}} alt='mobile img 1' src={l6shimg}/>  
-          <img className={top_p_text[3] === 'ABC 4512' ? 'l7shimg2effectin' : 'l7shimg2effectout'} style={{marginLeft: '650px', position: 'absolute'}} alt='mobile img 1' src={l7shimg2}/>  
-          <img className={top_p_text[3] === 'ABC 4512' ? 'l7shimg1effectin' : 'l7shimg1effectout'} style={{marginLeft: '225px', position: 'absolute'}} alt='mobile img 2' src={l7shimg1}/>  
+          <img className={top_p_text[3] === 'ABC 123' ? 'l1sheffectin' : 'l1sheffectout'} style={{marginLeft: '100px', position: 'absolute'}} alt='mobile img 1' src={l1_sh_img1}/>
+          <img className={top_p_text[3] === 'ABC 123' ? 'l1sheffectin' : 'l1sheffectout'} style={{marginLeft: '500px', position: 'absolute'}} alt='mobile img 2' src={l1_sh_img2}/>
+          <img className={top_p_text[3] === 'ABC 234' ? 'l2shimg1effectin' : 'l2shimg1effectout'} style={{marginLeft: '200px', position: 'absolute'}} alt='mobile img 1' src={l2shimg1}/>
+          <img className={top_p_text[3] === 'ABC 234' ? 'l2shimg2effectin' : 'l2shimg2effectout'} style={{marginLeft: '700px', position: 'absolute'}} alt='mobile img 2' src={l2shimg2}/>
+          <img className={top_p_text[3] === 'ABC 345' ? 'l3shimg1effectin' : 'l3shimg1effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 1' src={l3shimg1}/>
+          <img className={top_p_text[3] === 'ABC 345' ? 'l3shimg2effectin' : 'l3shimg2effectout'} style={{marginLeft: '700px', position: 'absolute'}} alt='mobile img 2' src={l3shimg2}/>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l4shimg1effectin' : 'l4shimg1effectout'} style={{marginLeft: '100px', position: 'absolute'}} alt='mobile img 1' src={l4shimg1}/>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l4shimg2effectin' : 'l4shimg2effectout'} style={{marginLeft: '550px', position: 'absolute'}} alt='mobile img 2' src={l4shimg2}/>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l4shimgbuneffectin' : 'l4shimgbuneffectout'} style={{right: '80px', position: 'absolute', width: '250px', height: 'auto'}} alt='mobile img 3' src={l4shimgbun}/>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l4shimgrolleffectin' : 'l4shimgrolleffectout'} style={{bottom: '-125px', position: 'absolute', width: '500px', height: 'auto'}} alt='mobile img 4' src={l4shimgroll}/>
+          <img className={top_p_text[3] === 'ABC 456' ? 'l4shimgpizzaeffectin' : 'l4shimgpizzaeffectout'} style={{position: 'absolute', width: '600px', marginTop: '-115px'}} alt='mobile img 5' src={l4shimgpizza}/>
+          <img className={top_p_text[3] === 'ABC 567' ? 'l5shimg1effectin' : 'l5shimg1effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 1' src={l5shimg1}/>
+          <img className={top_p_text[3] === 'ABC 567' ? 'l5shimg2effectin' : 'l5shimg2effectout'} style={{marginLeft: '485px', position: 'absolute'}} alt='mobile img 2' src={l5shimg2}/>
+          <img className={top_p_text[3] === 'ABC 567' ? 'l5shimg3effectin' : 'l5shimg3effectout'} style={{top: '22vh', position: 'absolute'}} alt='mobile img 3' src={l5shimg3}/>
+          <img className={top_p_text[3] === 'ABC 567' ? 'l5shimg4effectin' : 'l5shimg4effectout'} style={{marginLeft: '485px', position: 'absolute'}} alt='mobile img 4' src={l5shimg4}/>
+          <img className={top_p_text[3] === 'ABC 567' ? 'l5shimg5effectin' : 'l5shimg5effectout'} style={{marginLeft: '150px', position: 'absolute'}} alt='mobile img 5' src={l5shimg5}/>  
+          <img className={top_p_text[3] === 'ABC 678' ? 'l6shimgeffectin' : 'l6shimgeffectout'} style={{position: 'absolute', width: '100%'}} alt='mobile img 1' src={l6shimg}/>  
+          <img className={top_p_text[3] === 'ABC 23478' ? 'l7shimg2effectin' : 'l7shimg2effectout'} style={{marginLeft: '650px', position: 'absolute'}} alt='mobile img 1' src={l7shimg2}/>  
+          <img className={top_p_text[3] === 'ABC 23478' ? 'l7shimg1effectin' : 'l7shimg1effectout'} style={{marginLeft: '225px', position: 'absolute'}} alt='mobile img 2' src={l7shimg1}/>  
       </div>
     </div> : <div style={{width: '100%', height: '100%'}}>
         <OwlCarousel items={1} loop autoplay autoplayTimeout={3000} autoplaySpeed={1000} dots>
